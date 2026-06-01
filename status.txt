@@ -1,0 +1,11 @@
+
+database: db/development.sqlite3
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20260529162408  Create items
+   up     20260531194508  Create tasks
+  down    20260531195900  Add description to tasks
+   up     20260531203044  Create comments
+
+

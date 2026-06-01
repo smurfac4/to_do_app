@@ -1,0 +1,214 @@
+body {
+  background: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Форма добавления */
+.top-bar {
+  margin-bottom: 20px;
+}
+
+.add-form {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.add-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.input-error {
+  border: 2px solid #e94560;
+}
+
+.is-invalid {
+  border: 2px solid #e94560;
+}
+
+.add-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background: #43a047;
+}
+
+/* Список задач */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  background: white;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+.task-title {
+  color: #333;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.task-title:hover {
+  color: #4caf50;
+}
+
+.btn-delete {
+  background: none;
+  color: #ccc;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-delete:hover {
+  color: #e94560;
+}
+
+/* Страница задачи */
+.task-detail {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-header h2 {
+  color: #333;
+  margin: 0;
+}
+
+.btn-delete-big {
+  background: white;
+  color: #e94560;
+  border: 1px solid #e94560;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-delete-big:hover {
+  background: #e94560;
+  color: white;
+}
+
+.task-meta {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.task-desc {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.comment {
+  background: #f8f9fa;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment span {
+  color: #333;
+}
+
+.comment-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+.date-input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+}
+
+.task-meta-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.task-deadline {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.overdue {
+  border-left: 3px solid #e94560;
+}
+
+.overdue .task-deadline {
+  color: #e94560;
+  font-weight: bold;
+}
+
+

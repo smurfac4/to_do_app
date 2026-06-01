@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="task-detail">
+    <div class="task-header">
+      <h2><%= @task.title %></h2>
+      <%= button_to "🗑 Удалить", task_path(@task), method: :delete, class: "btn-delete-big" %>
+    </div>
+
+    <p class="task-meta">🕐 <%= @task.created_at.strftime("%d %b, %H:%M") %></p>
+
+    <div class="task-desc">
+      <% if @task.description.present? %>
+        <%= @task.description %>
+      <% else %>
+        <em>Описание не добавлено</em>
+      <% end %>
+    </div>
+
+    <h3>💬 Комментарии</h3>
+
+    <% @task.comments.each do |comment| %>
+      <div class="comment">
+        <span><%= comment.body %></span>
+        <%= button_to "✕", task_comment_path(@task, comment), method: :delete, class: "btn-delete" %>
+      </div>
+    <% end %>
+
+    <%= form_with model: [@task, @comment] do |f| %>
+      <div class="comment-form">
+        <%= f.text_field :body, placeholder: "Написать комментарий...", class: "add-input" %>
+        <%= f.submit "Отправить", class: "add-btn" %>
+      </div>
+    <% end %>
+
+    <%= link_to "← Назад", tasks_path, class: "back-link" %>
+  </div>
+</div>
+
+
+

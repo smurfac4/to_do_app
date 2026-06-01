@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="top-bar">
+    <%= form_with model: @task, class: "add-form" do |f| %>
+      <%= f.text_field :title,
+        placeholder: "Новая задача...",
+        class: ["add-input", ("input-error" if @task.errors[:title].any?)].compact.join(" ") %>
+      <%= f.text_field :description,
+        placeholder: "Описание задачи...",
+        class: "add-input" %>
+      <%= f.select :priority, [["🔥", 1], ["🔥🔥", 2], ["🔥🔥🔥", 3]], {}, class: "priority-input" %>
+      <%= f.date_field :deadline, class: "date-input" %>
+      <%= f.submit "+", class: "add-btn" %>
+    <% end %>
+  </div>
+
+  <ul class="task-list">
+    <% @tasks.each do |task| %>
+      <li class="task-item <%= 'overdue' if task.deadline && task.deadline < Time.now %>">
+        <div class="task-left">
+          <%= link_to task.title, task_path(task), class: "task-title" %>
+          <div class="task-meta-row">
+            <span class="task-priority"><%= "🔥" * (task.priority || 1) %></span>
+            <% if task.deadline %>
+              <span class="task-deadline">⏰ <%= task.deadline.strftime("%d %b") %></span>
+            <% end %>
+          </div>
+        </div>
+        <%= button_to "✕", task_path(task), method: :delete, class: "btn-delete" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

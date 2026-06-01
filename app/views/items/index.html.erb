@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="top-bar">
+    <%= form_with url: tasks_path, method: :post, class: "add-form" do |f| %>
+      <%= f.text_field :title, placeholder: "Новая задача...", class: "add-input" %>
+      <%= f.submit "+", class: "add-btn" %>
+    <% end %>
+  </div>
+
+  <% if @items.any? %>
+    <div class="row g-3">
+      <% @items.each do |item| %>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title"><%= item.name %></h5>
+              <p class="card-text">Цена: <strong><%= item.price %>€</strong></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="alert alert-info">Товары отсутствуют.</div>
+  <% end %>
+</div>

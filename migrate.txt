@@ -1,0 +1,3 @@
+== 20260531195900 AddDescriptionToTasks: migrating ============================
+-- add_column(:tasks, :description, :text)
+
